@@ -25,7 +25,7 @@ Você pode ver também:
   - É muito importante entender o conceito de FPS na teoria
   - Entenda como funciona a criação de Skins para o cenário
   - Procure saber sobre como funciona Quadrante na matemática, vai ajudar muito na criação dos objetos Canvas
-  - 
+  
 ### Como jogar?
 
 - Baixe o repositório
