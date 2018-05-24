@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <title>Car Racing - Charleston</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        body {
+            background-image: url("images/background.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-color: #000;
+        }
+        
+        canvas {
+            border: 1px solid #d3d3d3;
+            background-color: #000;
+            display: table;
+            margin: 0 auto;
+        }
+        
+        .button {
+            background-color: #f44336;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            position: absolute;
+            bottom: 40px;
+            left: 447px
+        }
+    </style>
+
+</head>
+
+<body onload="startGame()">
+    <button onclick="game.toogle()" class="button" id="btnAction">Play</button>
+    <script src="game.js"></script>
+    <script src="libraries/jquery-git-3.3.1.js"></script>
+</body>
+
+</html>
