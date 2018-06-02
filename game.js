@@ -54,7 +54,7 @@ var car = {
     ],
     //Puts the car in the middle of the third road
     x: roads.three + 15,
-    y: CANVAS_HEIGHT - 85,
+    y: CANVAS_HEIGHT - 130,
     type: TYPE_COMPONENT_IMAGE
 }
 
