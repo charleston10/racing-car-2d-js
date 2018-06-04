@@ -12,7 +12,7 @@ var SCORE_MAX = localStorage.getItem(LOCAL_STORAGE_SCORE_MAX);
 
 //properties
 var obstacle = {
-    width: 80,
+    width: 32,
     height: 80,
     type: [
         {
@@ -45,14 +45,15 @@ var roads = {
 }
 
 var car = {
-    width: 80,
+    width: 30,
     height: 80,
     sprite: [
         'images/vehicles/car_police/1.png',
         'images/vehicles/car_police/2.png',
         'images/vehicles/car_police/3.png'
     ],
-    x: roads.three,
+    //Puts the car in the middle of the third road
+    x: roads.three + 15,
     y: CANVAS_HEIGHT - 85,
     type: TYPE_COMPONENT_IMAGE
 }
@@ -285,7 +286,6 @@ function Component(width, height, color, x, y, type) {
     }
     this.crashWith = function (element) {
         var crash = false;
-
         var axisX = this.x;
         var width = ((this.width / 2) + 6) + this.x;
         var axisY = this.y;
@@ -298,7 +298,7 @@ function Component(width, height, color, x, y, type) {
 
         if (axisX => elementAxisX && axisX <= elementWidth) {//verify colision left - right on axis X -->
             if (axisX < elementWidth && width > elementAxisX) {//verify colision right - left on axis X <--
-                if (elementHeight > axisY) {
+                if (elementHeight >= axisY && elementAxisY <= height) {
                     crash = true;
                 }
             }
@@ -590,7 +590,8 @@ function createObstacles() {
 
             roadsUsed.push(newRoad);
 
-            x = roads.getRoads()[newRoad];
+            // Puts the obstacle in the middle of the chosen road
+            x = roads.getRoads()[newRoad] + 14;
             y = Math.round(Math.random() * 50) * -1;
 
             var typeObstacle = Math.floor(Math.round(Math.random() * 1));
